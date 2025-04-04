@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from app.models import db  # ✅ Import from __init__.py
+from app.models import db 
 from app.routes.task_routes import task_bp
 
 def create_app():
@@ -9,7 +9,7 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "postgresql://user:password@db:5432/database")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-    db.init_app(app)  # ✅ Ensure DB is initialized before use
+    db.init_app(app)  
 
     app.register_blueprint(task_bp, url_prefix="/")
 

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from app.models import db  # ✅ Import db from __init__.py
-from app.models.task import TaskManager  # ✅ Import TaskManager separately
+from app.models import db  
+from app.models.task import TaskManager  
 
 
 task_bp = Blueprint("task", __name__)
